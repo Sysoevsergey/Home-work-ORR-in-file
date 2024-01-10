@@ -6,9 +6,8 @@ for file_name in files:
 		lines = file.readlines()
 		content[file_name] = lines
 
-
 for file_name, lines in content.items():
-	content[file_name] = [f'{file_name}\n', f'{len(lines)}\n'] + lines
+	content[file_name] = [f'\n{file_name}\n', f'{len(lines)}\n'] + lines
 
 sorted_content = {k: v for k, v in sorted(content.items(), key=lambda item: item[1][1])}
 
